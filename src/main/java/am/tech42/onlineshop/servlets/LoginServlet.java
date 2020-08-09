@@ -1,5 +1,6 @@
 package am.tech42.onlineshop.servlets;
 
+import am.tech42.onlineshop.model.User;
 import am.tech42.onlineshop.service.UserService;
 
 import javax.servlet.ServletException;
@@ -17,10 +18,10 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        var phoneNumber = req.getParameter("phoneNumber");
-        var password = req.getParameter("password");
+        String phoneNumber = req.getParameter("phoneNumber");
+        String password = req.getParameter("password");
 
-        var user = UserService.login(phoneNumber, password);
+        User user = UserService.login(phoneNumber, password);
 
         if(user == null) {
             resp.sendRedirect("/login?error");

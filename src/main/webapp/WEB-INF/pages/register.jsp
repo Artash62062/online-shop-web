@@ -8,7 +8,7 @@
     <h1>Register</h1>
     <form action="${pageContext.request.contextPath}/register" method="post">
         <label>
-            Username: <input name="username" type="text"/>
+            Phone Number: <input name="phoneNumber" type="text"/>
         </label>
         <br/>
         <label>
